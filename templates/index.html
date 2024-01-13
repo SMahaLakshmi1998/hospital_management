@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOSPITAL MANAGEMENT</title>
+    <link rel="stylesheet" href="../static/home.css">
+    <style>
+        table,tr,td,th{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+     <section class="hospital">
+    <h1>APPOINTMENTS</h1>
+    <div class="whole">
+    <div class="name">
+        <form method="post" action="/insert">
+        
+         
+       <label for="name">Patient Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="name" id="name"><br><br>
+            
+        <label for="gender">Gender:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="gender" id="gender"><br><br>
+        <label for="age">Age:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="number" name="age" id="age"><br><br>
+        <label for="appoinment">Appointment Time:</label>&nbsp
+        <input type="time" name="Appointment Time" id="appoinment"><br><br>
+        <label for="Mobile">Mobile Number:</label>&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="tel" name="Mobile" id="Mobile"><br><br>
+        <label for="Appointment">Appointment_Date:</label>
+        <input type="date" name="Appointment_Date" id="Appointment"><br><br>
+        <input type="submit" value="Add Patient" class="patient">
+    </div>
+</table>
+        </form>
+        <div class="login">
+            <a href="{{url_for('login')}}"><button>Login</button></a>
+           
+            <a href="{{url_for('signin')}}"><button>SignIn</button></a>
+            
+            </div> 
+        
+            
+        </div>
+    
+       
+    </div>
+
+   
+    <div class="first">
+        <table>
+        <tr>
+            <th>Serial_Number</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone_Number</th>
+
+            <th>Appointment_time</th>
+            <th>Appointment_Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+        </tr>
+        <tr>
+            {%for i in datas%}
+            <td>{{loop.index}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.Age}}</td>
+            <td>{{i.Gender}}</td>
+            
+            <td>{{i.Appointment_time}}</td>
+            <td>{{i.Phone_Number}}</td>
+            <td>{{i.Appointment_Date}}</td>
+            <td><a href="{{url_for('edit',id=i['_id'])}}"><button>Edit</button></a></td>
+            <td><a href="{{url_for('delete',id=i['_id'])}}"><button>Delete</button></a></td>
+        </tr>
+            {%endfor%}
+  
+    </div>
+    </section>
+     
+
+</body>
+</html>

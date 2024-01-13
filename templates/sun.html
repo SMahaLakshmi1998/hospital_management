@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{datas}}
+    <table>
+        <tr>
+            <th>Serial_Number</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone_Number</th>
+
+            <th>Appointment_time</th>
+            <th>Appointment_Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+        </tr>
+        <tr>
+            {%for i in datas%}
+            <td>{{loop.index}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.Age}}</td>
+            <td>{{i.Gender}}</td>
+            
+            <td>{{i.Appointment_time}}</td>
+            <td>{{i.Phone_Number}}</td>
+            <td>{{i.Appointment_Date}}</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+            {%endfor%}
+ 
+
+        
+</body>
+</html>
+
+ <!-- <div class="login">
+            <a href="{{url_for('login')}}"><button>Login</button></a>
+            <a href="{{url_for('signin')}}"><button>SignIn</button></a>
+        </div> -->
+    

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="{{url_for('edit',id=order['_id'])}}">
+         
+        <input type="text" name="Name"  value="{{order.Name}}" placeholder="type the patient name"><br><br>
+        
+        <input type="number" name="Age" value="{{order.Age}}" placeholder="type the patient age"><br><br>
+        
+         
+        <input type="text" name="Gender"  value="{{order.Gender}}" placeholder="type the patient gender"><br><br>
+         
+        <input type="time" name="Appointment_time"  value="{{order.Appointment_time}}"
+        placeholder="type the patient time"><br><br>
+         
+        <input type="tel" name="Phone_Number"  value="{{order.Phone_Number}}"
+         placeholder="type the patient Mobile"><br><br>
+        
+        <input type="date" name="Appointment_Date"  value="{{order.Appointment_Date}}" 
+        placeholder="type the patient date"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
